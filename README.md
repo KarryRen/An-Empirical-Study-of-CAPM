@@ -29,11 +29,9 @@
 ## 环境要求
 
 本文所有代码均在 `Stata16` 上调试运行
-
 部分需要添加的包均在代码文件中说明，您只需要运行命令安装即可
-
-注意代码文件中相关路径的修改，您可以将本项目直接下载到本地，然后修改绝对路径前缀即可例如：
-
+注意代码文件中相关路径的修改，您可以将本项目直接下载到本地，然后修改绝对路径前缀即可。
+例如：
 ```apl
 "C:\Users\16332\Desktop\FinEcon\FinalPaper\CAPM\Data\Part1_NORMAL_CAPM" 
 ====> "your path \DataFile\Part1_NORMAL_CAPM"
@@ -93,4 +91,4 @@
 
 ## 联系我们
 
-您对本项目有任何问题均可直接通过（KarryRenKai@outlook.com）联系我
+如果您对本项目有任何问题，可直接通过（KarryRenKai@outlook.com）联系我们
