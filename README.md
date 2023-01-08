@@ -35,7 +35,8 @@
 注意代码文件中相关路径的修改，您可以将本项目直接下载到本地，然后修改绝对路径前缀即可例如：
 
 ```apl
-"C:\Users\16332\Desktop\FinEcon\FinalPaper\CAPM\Data\Part1_NORMAL_CAPM" ====> "your path \DataFile\Part1_NORMAL_CAPM"
+"C:\Users\16332\Desktop\FinEcon\FinalPaper\CAPM\Data\Part1_NORMAL_CAPM" 
+====> "your path \DataFile\Part1_NORMAL_CAPM"
 ```
 
 
