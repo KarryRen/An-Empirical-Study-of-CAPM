@@ -21,7 +21,7 @@
 ### Fama-French 三因子模型
 
 
-![image2](https://github.com/KarryRen/FinalPaper_2022_FinancialEconometrics_CAPM/blob/main/Img/Fig.2.png)
+![image2](https://github.com/KarryRen/FinalPaper_2022_FinancialEconometrics_CAPM/blob/main/Img/Fig.3.png)
 <center>图2. Fama-French 三因子模型的时间序列回归数据构建流程图</center>
 
 
