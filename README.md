@@ -1,2 +1,0 @@
-# FinalPaper_2022_FinancialEconometrics_CAPM
-四川大学2022年秋金融计量学（赵绍阳 祝梓翔）期末论文，任凯组《基于中国A股数据的资本资产定价模型实证研究》
