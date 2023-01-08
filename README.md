@@ -13,7 +13,7 @@
 ### 采用Fama-MacBatch回归验证标准CAPM
 
 
-![image1]([https://github.com/KarryRen/FinalPaper_2022_FinancialEconometrics_CAPM/tree/main/Img\图2.采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图.png](https://github.com/KarryRen/FinalPaper_2022_FinancialEconometrics_CAPM/blob/main/Img/%E5%9B%BE2.%E9%87%87%E7%94%A8%20Fama-MacBatch%20%E5%9B%9E%E5%BD%92%E9%AA%8C%E8%AF%81%E6%A0%87%E5%87%86%20CAPM%20%E6%96%B9%E6%B3%95%E6%A1%86%E6%9E%B6%E5%9B%BE.png))
+![image1](https://github.com/KarryRen/FinalPaper_2022_FinancialEconometrics_CAPM/blob/main/Img/Fig.2.png)
 <center>图1. 采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图（以2000到2012年数据区间为例）</center>
 
 
@@ -21,7 +21,7 @@
 ### Fama-French 三因子模型
 
 
-![image2]([C:\Users\16332\Desktop\FinEcon\FinalPaper\image\图3..Fama-French 三因子模型的时间序列回归数据构建流程图.png](https://github.com/KarryRen/FinalPaper_2022_FinancialEconometrics_CAPM/blob/main/Img/%E5%9B%BE3..Fama-French%20%E4%B8%89%E5%9B%A0%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%9B%9E%E5%BD%92%E6%95%B0%E6%8D%AE%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B%E5%9B%BE.png))
+![image2](https://github.com/KarryRen/FinalPaper_2022_FinancialEconometrics_CAPM/blob/main/Img/Fig.2.png)
 <center>图2. Fama-French 三因子模型的时间序列回归数据构建流程图</center>
 
 
