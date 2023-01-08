@@ -35,9 +35,7 @@
 注意代码文件中相关路径的修改，您可以将本项目直接下载到本地，然后修改绝对路径前缀即可例如：
 
 ```apl
-"C:\Users\16332\Desktop\FinEcon\FinalPaper\CAPM\Data\Part1_NORMAL_CAPM"
-====>
-"your path \DataFile\Part1_NORMAL_CAPM"
+"C:\Users\16332\Desktop\FinEcon\FinalPaper\CAPM\Data\Part1_NORMAL_CAPM" ====> "your path \DataFile\Part1_NORMAL_CAPM"
 ```
 
 
@@ -49,46 +47,46 @@
 `Code&Data` 文件夹内为本文所构建项目的代码和数据
 
 ```apl
-| ---- DoFile 									 Do 文件夹，也即代码文件夹
-	| --- Part1_NORMAL_CAPM 					 “验证标准CAPM” 所用代码
-		| -- preProcessData.do 					 数据预处理代码
-		| -- FamaMacBatch.do 					 模型回归代码
-		| -- FamaMacBatch_observation.do 		 中间结果统计代码	
-	| --- Part2_FF_3FACTOR     分析 “Fama-French 三因子模型” 所用代码文件夹
-		| -- FF_3Factor.do     该部分整体代码
+| ---- DoFile 									Do 文件夹，也即代码文件夹
+	| --- Part1_NORMAL_CAPM 					 	“验证标准CAPM” 所用代码
+		| -- preProcessData.do 					 	数据预处理代码
+		| -- FamaMacBatch.do 					 	模型回归代码
+		| -- FamaMacBatch_observation.do 		 		中间结果统计代码	
+	| --- Part2_FF_3FACTOR     						分析 “Fama-French 三因子模型” 所用代码文件夹
+		| -- FF_3Factor.do     						该部分整体代码
 		
-| ---- DataFile 							数据文件夹
-	| --- Part1_NORMAL_CAPM  				“验证标准CAPM” 所用数据
+| ---- DataFile 								数据文件夹
+	| --- Part1_NORMAL_CAPM  						“验证标准CAPM” 所用数据
 		| -- Raw							源数据文件夹
-			| - stocks.dta					原始股票交易数据
-			| - SSE_index.dta				原始上证综合指数交易数据
+			| - stocks.dta						原始股票交易数据
+			| - SSE_index.dta					原始上证综合指数交易数据
 		| -- Target							处理后数据文件夹
-			| - index_pro.dta				处理后的上证综合指数交易数据
-			| - stock_pro.dta				处理后的股票交易数据
-		| -- cnStock.dta					拼接完成后可直接分析的最终数据
-	| --- Part2_FF_3FACTOR 为分析 “Fama-French 三因子模型” 所有数据
-		| -- Raw							  所有的源数据文件
-			| - 分组结果.dta				按照规模和账面市值比分组后的结果
-			| - 分组数据.dta				按照规模和账面市值比分组前的数据
-			| - 公司文件.dta				上市公司的基本文件信息
-			| - 月个股回报率.zip			   月度个股收益率
-			| - 收益率数据.zip				处理后的月度个股收益率
-			| - 三因子数据.dta				计算得到的三因子数据
-			| - 是否ST.dta				  股票状态标识数据
-			| - 无风险利率.dta				各月的无风险利率
-			| - 资产负债表.zip				上市公司的资产负债表信息
-			| - 综合月市场回报率.dta		  计算得到的市场组合回报率
+			| - index_pro.dta					处理后的上证综合指数交易数据
+			| - stock_pro.dta					处理后的股票交易数据
+		| -- cnStock.dta						拼接完成后可直接分析的最终数据
+	| --- Part2_FF_3FACTOR 							分析 “Fama-French 三因子模型” 所有数据
+		| -- Raw							所有的源数据文件
+			| - 分组结果.dta					     按照规模和账面市值比分组后的结果
+			| - 分组数据.dta					     按照规模和账面市值比分组前的数据
+			| - 公司文件.dta					     上市公司的基本文件信息
+			| - 月个股回报率.zip			   		    月度个股收益率
+			| - 收益率数据.zip					     处理后的月度个股收益率
+			| - 三因子数据.dta					     计算得到的三因子数据
+			| - 是否ST.dta				  	       股票状态标识数据
+			| - 无风险利率.dta					    各月的无风险利率
+			| - 资产负债表.zip					    上市公司的资产负债表信息
+			| - 综合月市场回报率.dta		  		  计算得到的市场组合回报率
 			| - BE.dta						账面市值比数据
-			| - data.dta					处理完成的数据结果
-			| - data_average_size_be.dta	中间结果：组合的平均规模和BE
-			| - data_firm_num.dta			中间结果：组合的月平均公司数
-			| - data_size_pc.dta			中间结果：组合的月市值占比
+			| - data.dta					        处理完成的数据结果
+			| - data_average_size_be.dta				中间结果：组合的平均规模和BE
+			| - data_firm_num.dta					中间结果：组合的月平均公司数
+			| - data_size_pc.dta					中间结果：组合的月市值占比
 			| - ME.dta						规模数据
 			| - Rf.dta						无风险收益率
 			| - Rm.dta						市场组合收益率
-		| -- Result							  所有的回归结果
-			| - 结果整理_不剔除30%.xlsx	   所有数据的回归结果
-			| - 结果整理_剔除30%.xlsx			考虑剔除最低市值30%股票的结果
+		| -- Result							所有的回归结果
+			| - 结果整理_不剔除30%.xlsx	   			  所有数据的回归结果
+			| - 结果整理_剔除30%.xlsx				  考虑剔除最低市值30%股票的结果
 
 ```
 
