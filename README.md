@@ -13,7 +13,7 @@
 ### 采用Fama-MacBatch回归验证标准CAPM
 
 
-
+[图2.采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图](C:\Users\16332\Desktop\FinEcon\FinalPaper\image\图2.采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图.png)
 <center>图1. 采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图（以2000到2012年数据区间为例）</center>
 
 
@@ -21,7 +21,7 @@
 ### Fama-French 三因子模型
 
 
-
+![图3..Fama-French 三因子模型的时间序列回归数据构建流程图](C:\Users\16332\Desktop\FinEcon\FinalPaper\image\图3..Fama-French 三因子模型的时间序列回归数据构建流程图.png)
 <center>图2. Fama-French 三因子模型的时间序列回归数据构建流程图</center>
 
 
