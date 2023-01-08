@@ -13,7 +13,7 @@
 ### 采用Fama-MacBatch回归验证标准CAPM
 
 
-[图2.采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图](C:\Users\16332\Desktop\FinEcon\FinalPaper\image\图2.采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图.png)
+[图2.采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图](https://github.com/KarryRen/FinalPaper_2022_FinancialEconometrics_CAPM/tree/main/Img\图2.采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图.png)
 <center>图1. 采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图（以2000到2012年数据区间为例）</center>
 
 
