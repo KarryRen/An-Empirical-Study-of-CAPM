@@ -43,7 +43,7 @@
 
 ## 项目结构介绍
 
-`KaiRen_XiShi_ZCWang_FinalPaper_2022_FinancialEconometrics_CAPM.pdf` 为论文稿件
+`PAPER_PDF版.pdf` 为论文稿件
 
 `Code&Data` 文件夹内为本文所构建项目的代码和数据
 
