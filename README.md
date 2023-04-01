@@ -10,30 +10,24 @@
 
 ### 采用Fama-MacBatch回归验证标准CAPM
 
-<img src="https://github.com/KarryRen/An-Empirical-Study-of-CAPM/blob/main/Images/Fig2.svg" alt="图2.采用Fama-MacBatch回归检验标准CAPM方法框架图" width="50%" height="50%"/>
-<center>图1. 采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图（以2000到2012年数据区间为例）</center>
+<img src="https://github.com/KarryRen/An-Empirical-Study-of-CAPM/blob/main/Images/Fig2.svg" alt="图2.采用Fama-MacBatch回归检验标准CAPM方法框架图" width="70%" height="70%"/>
+<center>图2. 采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图（以2000到2012年数据区间为例）</center>
 
 
 
 ### Fama-French 三因子模型
 
-<img src="https://github.com/KarryRen/FinalPaper_2022_FinancialEconometrics_CAPM/blob/main/Img/3.png"  alt="fig.3" width="70%" height="70%" />
-<center>图2. Fama-French 三因子模型的时间序列回归数据构建流程图</center>
+<img src="https://github.com/KarryRen/An-Empirical-Study-of-CAPM/blob/main/Images/Fig3.svg" alt="图3. Fama-French 三因子模型的时间序列回归数据构建框架图" width="70%" height="70%"/>
+<center>图3. Fama-French 三因子模型的时间序列回归数据构建框架图</center>
 
 
 
 ## 环境要求
 
-本文所有代码均在 `Stata16` 上调试运行
+本文所有代码均在 `Stata16` 上调试运行，部分需要添加的包均在代码文件中说明，您只需要运行命令安装即可。注意代码文件中相关路径的修改，您可以将本项目直接下载到本地，然后修改绝对路径前缀即可。例如：
 
-部分需要添加的包均在代码文件中说明，您只需要运行命令安装即可
-
-注意代码文件中相关路径的修改，您可以将本项目直接下载到本地，然后修改绝对路径前缀即可。
-
-例如：
 ```apl
-"C:\Users\16332\Desktop\FinEcon\FinalPaper\CAPM\Data\Part1_NORMAL_CAPM" 
-====> "your path \DataFile\Part1_NORMAL_CAPM"
+"D:\CAPM\Data\Part1_CAPM" ====>"your path \DataFile\Part1_NORMAL_CAPM"
 ```
 
 
@@ -45,49 +39,58 @@
 `Code&Data` 文件夹内为本文所构建项目的代码和数据
 
 ```apl
-| ---- DoFile 								Do 文件夹，也即代码文件夹
-	| --- Part1_NORMAL_CAPM 					验证标准CAPM” 所用代码
-		| -- preProcessData.do 					数据预处理代码
-		| -- FamaMacBatch.do 					模型回归代码
-		| -- FamaMacBatch_observation.do 		 	中间结果统计代码	
-	| --- Part2_FF_3FACTOR     					分析 “Fama-French 三因子模型” 所用代码文件夹
-		| -- FF_3Factor.do     					该部分整体代码
+| ---- DoFile "Do 文件夹，也即代码文件夹"
+	| --- Part1_NORMAL_CAPM "验证标准CAPM” 所用代码"
+		| -- preProcessData.do "数据预处理代码"
+		| -- FamaMacBatch.do "模型回归代码"
+		| -- FamaMacBatch_observation.do "中间结果的统计代码"
+	| --- Part2_FF_3FACTOR "分析Fama-French 三因子模型所用代码文件夹"
+		| -- FF_3Factor.do "该部分整体代码"
 		
-| ---- DataFile 							数据文件夹
-	| --- Part1_NORMAL_CAPM  					“验证标准CAPM” 所用数据
-		| -- Raw						源数据文件夹
-			| - stocks.dta					原始股票交易数据
-			| - SSE_index.dta				原始上证综合指数交易数据
-		| -- Target						处理后数据文件夹
-			| - index_pro.dta				处理后的上证综合指数交易数据
-			| - stock_pro.dta				处理后的股票交易数据
-		| -- cnStock.dta					拼接完成后可直接分析的最终数据
-	| --- Part2_FF_3FACTOR 						分析 “Fama-French 三因子模型” 所有数据
-		| -- Raw						所有的源数据文件
-			| - 分组结果.dta				     按照规模和账面市值比分组后的结果
-			| - 分组数据.dta				     按照规模和账面市值比分组前的数据
-			| - 公司文件.dta				     上市公司的基本文件信息
-			| - 月个股回报率.zip				月度个股收益率
-			| - 收益率数据.zip				 处理后的月度个股收益率
-			| - 三因子数据.dta				 计算得到的三因子数据
-			| - 是否ST.dta				    股票状态标识数据
-			| - 无风险利率.dta				 各月的无风险利率
-			| - 资产负债表.zip				 上市公司的资产负债表信息
-			| - 综合月市场回报率.dta		       计算得到的市场组合回报率
-			| - BE.dta				      账面市值比数据
-			| - data.dta				      处理完成的数据结果
-			| - data_average_size_be.dta		      中间结果：组合的平均规模和BE
-			| - data_firm_num.dta			      中间结果：组合的月平均公司数
-			| - data_size_pc.dta			      中间结果：组合的月市值占比
-			| - ME.dta				      规模数据
-			| - Rf.dta			              无风险收益率
-			| - Rm.dta				      市场组合收益率
-		| -- Result					      所有的回归结果
-			| - 结果整理_不剔除30%.xlsx	   	         所有数据的回归结果
-			| - 结果整理_剔除30%.xlsx		         考虑剔除最低市值30%股票的结果
+| ---- DataFile "数据文件夹"
+	| --- Part1_NORMAL_CAPM "验证标准CAPM所用数据"
+		| -- Raw "源数据文件夹"
+			| - stocks.dta "原始股票交易数据"
+			| - SSE_index.dta "原始上证综合指数交易数据"
+		| -- Target	"处理后数据文件夹"
+			| - index_pro.dta "处理后的上证综合指数交易数据"
+			| - stock_pro.dta "处理后的股票交易数据"
+		| -- cnStock.dta "拼接完成后可直接分析的最终数据"
+	| --- Part2_FF_3FACTOR "分析Fama-French 三因子模型所用的数据"
+		| -- Raw "所有的源数据文件"
+			| - 分组结果.dta "按照规模和账面市值比分组后的结果"
+			| - 分组数据.dta "按照规模和账面市值比分组前的数据"
+			| - CompanyFile.dta	"上市公司的基本文件信息"
+			| - ReturenRate_month.zip "处理后的月度个股收益率"
+			| - 三因子数据.dta "计算得到的三因子数据"
+			| - ST_orNot.dta "股票状态标识数据"
+			| - RiskFreeRates.dta "各月的无风险利率"
+			| - BalanceSheet.zip "上市公司的资产负债表信息"
+			| - TotalMarketReturn_month.dta "计算得到的市场组合回报率"
+			| - BE.dta "账面市值比数据"
+			| - data.dta "处理完成的数据结果"
+			| - data_average_size_be.dta "中间结果：组合的平均规模和BE"
+			| - data_firm_num.dta "中间结果：组合的月平均公司数"
+			| - data_size_pc.dta "中间结果：组合的月市值占比"
+			| - ME.dta "规模数据"
+			| - Rf.dta "无风险收益率"
+			| - Rm.dta "市场组合收益率"
+		| -- Result "所有的回归结果"
+			| - 结果整理_不剔除30%.xlsx "所有数据的回归结果"
+			| - 结果整理_剔除30%.xlsx "考虑剔除最低市值30%股票的结果"
 
 ```
 
 ## 联系我们
 
 如果您对本项目有任何问题，可直接通过（KarryRenKai@outlook.com）联系我们
+
+
+
+## 补充信息：
+
+**均值方差假设：**投资者通过观察一段时间内证券组合的收益率和标准差来评判证券组合，若标准差相同，投资者将选择具有较高收益率的证券组合，若预期收益率等同，投资者将选择具有较低标准差的证券组合。
+
+**投资者一致假设：**市场中所有投资者计划的投资时点和投资期限相同，组成各个投资组合的证券数目相同，投资者对证券的收益率、标准差、协方差看法相同，投资者选择不同投资组合的原因只是风险偏好不同。
+
+**完全市场假设：**市场不存在交易成本和税收，所有资产完全可分割、可交易，市场是完全竞争的，信息成本为零，所有市场参与者同时接受信息，且都是理性的。
