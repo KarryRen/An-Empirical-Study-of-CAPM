@@ -10,7 +10,7 @@
 
 ### 采用Fama-MacBatch回归验证标准CAPM
 
-<img src="https://github.com/KarryRen/FinalPaper_2022_FinancialEconometrics_CAPM/blob/main/Images/图2.采用Fama-MacBatch回归检验标准CAPM方法框架图.svg"  alt="图片2." width="70%" height="70%" />
+<img src="C:\Users\16332\Desktop\2023保研\Paper\基于中国A股述的资本资产定价模型实证分析\Image\图2.采用Fama-MacBatch回归检验标准CAPM方法框架图.svg" alt="图2.采用Fama-MacBatch回归检验标准CAPM方法框架图 "/>
 <center>图1. 采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图（以2000到2012年数据区间为例）</center>
 
 
