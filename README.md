@@ -10,7 +10,7 @@
 
 ### 采用Fama-MacBatch回归验证标准CAPM
 
-<img src="https://github.com/KarryRen/An-Empirical-Study-of-CAPM/blob/main/Images/Fig2.svg" alt="图2.采用Fama-MacBatch回归检验标准CAPM方法框架图" style="zoom:50%;"/>
+<img src="https://github.com/KarryRen/An-Empirical-Study-of-CAPM/blob/main/Images/Fig2.svg" alt="图2.采用Fama-MacBatch回归检验标准CAPM方法框架图" width="50%" height="50%"/>
 <center>图1. 采用 Fama-MacBatch 回归验证标准 CAPM 方法框架图（以2000到2012年数据区间为例）</center>
 
 
