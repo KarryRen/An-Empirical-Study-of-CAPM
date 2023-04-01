@@ -1,6 +1,5 @@
-//	===========================================================================
-//	                  
-//	Final Paper of financial Econometrics
+//	===========================================================================         
+//	An-Empirical-Study-of-CAPM
 // 	Code Part 2 : Fama-French Three Factor model(1993)
 //	Author : Kai Ren
 //	===========================================================================
@@ -18,11 +17,11 @@
 //	***********************************
 //	2.1 Raw data loader(read data from it)
 //	***********************************
-	cd C:\Users\16332\Desktop\FinEcon\FinalPaper\CAPM\Data\Part2_FF_3Factor\Raw
+	cd D:\CAPM\Data\Part2_FF_3Factor\Raw
 //	***********************************
 //	2.2 Target data lodaer(save data to it)
 //	***********************************
-	global res_path C:\Users\16332\Desktop\FinEcon\FinalPaper\CAPM\Data\Part2_FF_3Factor\Target
+	global res_path D:\CAPM\Data\Part2_FF_3Factor\Target
 
 //	===========================================================================
 //	STEP 3. DATA PRE PROCESS
@@ -30,44 +29,36 @@
 //	***********************************
 //	3.1 generate rf
 //	***********************************
-	use 无风险利率.dta, clear // 无风险利率采用一年期定期存款利率
+	use RiskFreeRates.dta, clear // 无风险利率采用一年期定期存款利率
 	gen 交易月份=substr(交易日期, 1, 7) // 生成交易月份变量
 	collapse (mean) Rf=月度化无风险利率, by(交易月份) // 转化为月份数据
 	save Rf.dta, replace
 //	***********************************
 //	3.2 generate rm
-//	Markettype [市场类型] - 
-// 		5=综合A股市场，10=综合B股市场，15=综合AB股市场，21=综合A股和创业板； 
-//		31=综合AB股和创业，37=综合A股和科创板，47=综合AB股和科创板；
-//		53=综合A股和创业板和科创板，63=综合AB股和创业板和科创板；
 //	***********************************
-	use 综合月市场回报率.dta, clear // 采用市值加权平均法计算，考虑现金红利再投资的综合月度市场回报率
+	use TotalMarketReturn_month.dta, clear // 采用市值加权平均法计算，考虑现金红利再投资的综合月度市场回报率
 	keep if 市场类型==21
 	save Rm.dta, replace
 //	***********************************
 //	3.3 根据日交易数据判断当月是否 ST
-//		1=正常交易，2=ST，3＝*ST，4＝S（2006年10月9日及之后股改未完成），
-//		5＝SST，6＝S*ST，7=G（2006年10月9日之前已完成股改）
-//		8=GST，9=G*ST，10=U（2006年10月9日之前股改未完成）
-//		11=UST，12=U*ST，13=N，14=NST，15=N*ST，16=PT
 //	***********************************
-	use 日个股回报率.dta, clear
+	use ReturenRate_day.dta, clear
 	gen 是否ST=inlist(交易状态, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15)
 	gen 是否PT=inlist(交易状态, 16)
 	gen 是否ST或PT=inlist(交易状态, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 16)
 	gen 交易月份=substr(交易日期, 1, 7)
 	collapse (max) 是否ST 是否PT 是否ST或PT, by(stkcd 交易月份) // 转化为月份数据
-	save 是否ST.dta, replace
+	save ST_orNot.dta, replace
 //	***********************************
 //	3.4
 //		GET BE 账面价值是t-1年12月底的账面所有者权益
 //		GET ME 市场价值是t-1年12底的市场总值
 //	***********************************
-	use 资产负债表.dta, clear
+	use BalanceSheet.dta, clear
 	keep stkcd year 资产总计 所有者权益合计
 	save BE.dta, replace
 
-	use 年个股回报率.dta, clear
+	use ReturenRate_year.dta, clear
 	replace 年个股总市值=年个股总市值*1000 // 市值的单位是千元，转化为元
 	replace 年个股流通市值=年个股流通市值*1000
 	keep stkcd year 年个股流通市值 年个股总市值
@@ -76,12 +67,12 @@
 //	===========================================================================
 //	STEP 4. RETURN DATA PROCESS
 //	=========================================================================== 
-	use 月个股回报率.dta, clear
+	use ReturenRate_month.dta, clear
 	keep stkcd 证券代码 year 交易月份 月个股流通市值 月个股总市值 考虑现金红利再投资的月个股回报率 市场类型
 	merge m:1 交易月份 using Rf.dta, nogen keep(1 3)
 	merge m:1 交易月份 using Rm.dta, nogen keep(1 3) keepusing(考虑现金红利再投资的综合月市场回报率流通市值加权平均法)
-	merge m:1 stkcd using 公司文件.dta,  nogen keep(1 3) keepusing(上市日期  行业代码C)
-	merge 1:1 stkcd 交易月份 using 是否ST.dta, nogen keep(1 3)
+	merge m:1 stkcd using CompanyFile.dta,  nogen keep(1 3) keepusing(上市日期  行业代码C)
+	merge 1:1 stkcd 交易月份 using ST_orNot.dta, nogen keep(1 3)
 	gen R_Rf=(考虑现金红利再投资的月个股回报率-Rf)*100 // 月超额收益率 百分比
 	drop if R_Rf==.
 	gen MKT=(考虑现金红利再投资的综合月市场回报率流通市值加权平均法-Rf)*100 // 市场因子 百分比
