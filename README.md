@@ -1,4 +1,4 @@
-# 基于中国A股数据的资本资产定价模型实证研究
+# [基于中国A股数据的资本资产定价模型实证研究](https://arxiv.org/ftp/arxiv/papers/2305/2305.04838.pdf)
 
 <center>任凯</center>
 
